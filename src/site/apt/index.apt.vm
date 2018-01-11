@@ -1,0 +1,89 @@
+  ${project.description}
+
+Installation
+
+  To add the plugin dependencies to your project, edit the project <<<pom.xml>>> and add:
+
++-----------------------------------------------------------------+
+<project>
+  ...
+  <dependencies>
+    ...
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>${project.artifactId}</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>${project.artifactId}</artifactId>
+      <version>${project.version}</version>
+      <classifier>contentdata</classifier>
+    </dependency>
+    ...
+  </dependencies>
+  ...
+</project>
++-----------------------------------------------------------------+
+
+  Running <<<mvn p:run>>> in your project, the plugin should be imported to the system. The plugin
+  should show up in the plugins list and any templates should be available in their respective locations.
+
+Adding a login/logout button
+
+  An output template is provided which can be added to the page layout velocity template
+  in order to display the login or logout button.
+
++------------------------------------------------------------------+
+#render({"outputTemplate": "com.atex.plugins.keycloak.login.LoginLogout.ot"})
++------------------------------------------------------------------+
+
+  in a standard GONG you may want to add it after:
+
++------------------------------------------------------------------+
+#render({"outputTemplate": "com.atex.plugins.socialauth.core.MainElement.ot", "content":$content})
++------------------------------------------------------------------+
+
+Configuration
+
+   You need to configure the plugin in the polopoly GUI, in the configuration tab on the Keycloak Login plugin content (at SiteEngine/Configuration/Plugins/Keycloak Login).
+
+[images/polopoly_gui.jpg]
+
+* Enabled
+
+  Let you enable / disable the login, the button will disappear from the site automatically and the js will not perform any checks.
+
+* Json
+
+  It must contain the keycloak configuration, you'll need to copy the json given in the installation tab of the client:
+
+[images/kc_realm_client_json.jpg]
+
+* Public Key
+
+  It must contain the keycloak realm public key, click on <<<Public Key>>> for the RSA provider in your realm:
+
+[images/kc_realm_pubkey.jpg]
+
+* Locale
+
+  The two letter locale, it must be enabled in the Realm, it will bring the keycloak login page in the specified locale.
+
+* Button Text
+
+  This is the text that will appear in the login button, if empty a default will be used.
+
+Javascript
+
+  <The JavaScript adapter depends on Base64 (window.btoa and window.atob) and HTML5 History API.
+  If you need to support browsers that do not have these available (for example, IE9) you need to add polyfillers.>
+
+  <Example polyfill libraries:>
+
+      {{https://github.com/davidchambers/Base64.js}}
+
+      {{https://github.com/devote/HTML5-History-API}}
+
+  See {{http://www.keycloak.org/docs/3.2/securing_apps/topics/oidc/javascript-adapter.html}} for more information.
+

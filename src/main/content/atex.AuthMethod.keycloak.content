@@ -1,0 +1,5 @@
+id:.
+major:3
+inputtemplate:com.atex.plugins.users.AuthenticationMethodConfig
+component:name:value:keycloak
+component:description:value:Keycloak

@@ -1,0 +1,62 @@
+Keycloak Configuration
+
+  You can configure keycloak in a lot of different ways, this is the description of a minimal configuration.
+
+* Login
+
+  Point your browser to the configured port of Keycloak and click on <<<Administration Console>>>:
+
+[images/kc_index.jpg]
+
+  And then enter you admin's username and password:
+
+[images/kc_login.jpg]
+
+* Realm
+
+  Keycloak is multi tenancy, so the first thing is to create a new <<<Realm>>> which will contain your configuration
+  and your users, you may call it GONG or after the name of the client.
+
+[images/kc_add_realm.jpg]
+
+  You can configure the way you want your users interact with your site, have a look at the keycloak documentation
+  for a better understanding of what you can configure and how, this is a default configuration:
+
+[images/kc_realm_conf.jpg]
+
+* Client
+
+  Once you have <<<realm>>> in place, you need to create a <<<client>>> which is the way to talk with keycloak.
+
+[images/kc_realm_add_client.jpg]
+
+* Client Configuration
+
+  For our purposes we created a client named <<<frontend>>>, which we may further configure, it is really important to
+  set the <<<Valid Redirect URIs>>> to the correct values:
+
+[images/kc_realm_client_conf.jpg]
+
+  You may want to add one or more <<<Identity Brokers>>> which allow your users to login with social media,
+  see {{{http://www.keycloak.org/docs/latest/server_admin/index.html#social-identity-providers}Keycloak documentation}} for the specific
+  configuration of each social media.
+
+[images/kc_realm_client_add_idp.jpg]
+
+  To configure some of the identity brokers, you may need to have a valid public domain, for *development purposes only*
+  you can use {{{http://xip.io}xip.io}}, suppose your local ip adress is 172.17.8.101 and keycloak running on port 8080,
+  you can use the public domain <<<http://172.17.8.101.xip.io:8080>>> to configure your IDP, xip.io use a custom DNS
+  software that allow you to resolve to the IP being given before ".xip.io".
+
+* Look and feel of the login pages
+
+  You can create your own themes for the various keycloak pages, follow the
+  {{{http://www.keycloak.org/docs/3.2/server_development/topics/themes.html}documentation}}.
+
+  You are now ready to configure your plugin in polopoly.
+
+
+
+
+
+

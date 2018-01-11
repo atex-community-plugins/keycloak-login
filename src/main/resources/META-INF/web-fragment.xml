@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-fragment xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-fragment_3_1.xsd"
+              version="3.1">
+
+  <name>keycloak_login_fragment</name>
+
+  <context-param>
+    <param-name>cmservlet_ignore.keycloak_login</param-name>
+    <param-value>keycloak</param-value>
+  </context-param>
+
+  <servlet>
+    <servlet-name>KeycloakLogin</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>com.atex.onecms.ws.common;com.atex.plugins.keycloak.login.ws</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KeycloakLogin</servlet-name>
+    <url-pattern>/keycloak/*</url-pattern>
+  </servlet-mapping>
+
+</web-fragment>

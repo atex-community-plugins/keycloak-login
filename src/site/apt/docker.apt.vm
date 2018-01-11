@@ -1,0 +1,7 @@
+Docker
+
+  You can run Keycloak in a docker instance, see {{{https://hub.docker.com/r/jboss/keycloak}https://hub.docker.com/r/jboss/keycloak}} for details.
+
++-----------------------------------------------------------------+
+  docker run -e KEYCLOAK_USER=sysadmin -e KEYCLOAK_PASSWORD=sysadmin -p 9090:8080 jboss/keycloak
++-----------------------------------------------------------------+

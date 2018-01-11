@@ -1,0 +1,5 @@
+#if ($enabled)
+<button onclick="kclogin.doLogin($!locale);" type="button" class="btn btn-block btn-social btn-primary keycloak-login">
+    <i class="fa fa-user"></i>$esc.html($buttonText)
+</button>
+#end

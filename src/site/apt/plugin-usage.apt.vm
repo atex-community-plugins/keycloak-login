@@ -1,0 +1,12 @@
+User guide
+
+  Clicking the "log in" button will redirect the user to the keycloak login page, similar to:
+
+[images/kc_login.jpg]
+
+  Once logged in the user will be redirected to the original page, the js will detect the logged in user
+  and it will try to fetch the polopoly user which will be logged in and the user will be logged out of
+  keycloak.
+
+  While logged in, the user will have an "accessToken" cookie which may be used by the project or other plugins in order
+  to access the user's content. See the Users plugin documentation for details.

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
+  <input-template name="com.atex.plugins.keycloak.login.Configuration" label="com.atex.plugins.keycloak.login.Configuration">
+    <policy>com.atex.plugins.keycloak.login.ConfigPolicy</policy>
+    <editor>com.polopoly.plugin.OPluginConfigContextPolicyWidget</editor>
+    <viewer>com.polopoly.plugin.OPluginConfigContextPolicyWidget</viewer>
+
+    <type>AppConfig</type>
+
+    <param name="EditState_saveAndInsert">false</param>
+    <param name="EditState_saveAndView">true</param>
+    <param name="EditState_saveAndClose">false</param>
+    <param name="ViewState_insert">false</param>
+
+    <field name="enabled" input-template="p.Checkbox" label="com.atex.plugins.keycloak.login.Configuration.enabled">
+      <param name="checked">false</param>
+    </field>
+
+    <field name="json" input-template="p.siteengine.editor.CodeMirror" label="com.atex.plugins.keycloak.login.Configuration.json" >
+      <help>com.atex.plugins.keycloak.login.Configuration.json.help</help>
+      <param name="inlineHelp">true</param>
+      <param name="width">300</param>
+      <param name="height">200</param>
+      <param name="editorParameters">javascript lineNumbers</param>
+    </field>
+
+    <field name="pubKey" input-template="p.TextArea" label="com.atex.plugins.keycloak.login.Configuration.pubKey" >
+      <help>com.atex.plugins.keycloak.login.Configuration.pubKey.help</help>
+      <param name="inlineHelp">true</param>
+      <param name="rows">10</param>
+      <param name="cols">100</param>
+    </field>
+
+    <field name="locale" input-template="p.TextInput" label="com.atex.plugins.keycloak.login.Configuration.locale" >
+      <help>com.atex.plugins.keycloak.login.Configuration.locale.help</help>
+      <param name="inlineHelp">true</param>
+    </field>
+
+    <field name="text" input-template="p.TextInput" label="com.atex.plugins.keycloak.login.Configuration.text" >
+      <help>com.atex.plugins.keycloak.login.Configuration.text.help</help>
+      <param name="inlineHelp">true</param>
+    </field>
+
+  </input-template>
+</template-definition>

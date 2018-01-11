@@ -1,0 +1,6 @@
+# This file lists web resources of this plugin that should be rendered on all
+# pages. See "Plugin contributed web resources" on http://support.polopoly.com for
+# documentation.
+
+/keycloak.min.js
+/keycloak-login.min.js
