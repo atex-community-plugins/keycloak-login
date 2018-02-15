@@ -42,7 +42,7 @@
     <polopoly.version>10.16.5</polopoly.version>
     <servlet-api.version>3.0.1</servlet-api.version>
     <keycloak.version>3.4.3.Final</keycloak.version>
-    <baseline.version>4.0.6</baseline.version>
+    <baseline.version>4.0.7</baseline.version>
   </properties>
 
   <pluginRepositories>
@@ -113,7 +113,7 @@
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>jquery</artifactId>
-      <version>1.11.0-2</version>
+      <version>1.12.4-1</version>
       <classifier>contentdata</classifier>
     </dependency>
 
@@ -417,6 +417,23 @@
               </execution>
             </executions>
           </plugin>
+
+          <!-- bundles the source code into a JAR so that it can be deployed to nexus -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.1.2</version>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar</goal>
+                  <goal>test-jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
         </plugins>
       </build>
     </profile>
