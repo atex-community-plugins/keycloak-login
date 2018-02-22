@@ -93,14 +93,14 @@
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>users</artifactId>
-      <version>2.6-SNAPSHOT</version>
+      <version>2.6</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>users</artifactId>
-      <version>2.6-SNAPSHOT</version>
+      <version>2.6</version>
       <classifier>contentdata</classifier>
       <scope>provided</scope>
     </dependency>
@@ -108,7 +108,7 @@
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>social-auth-core</artifactId>
-      <version>2.6-SNAPSHOT</version>
+      <version>2.6</version>
       <classifier>contentdata</classifier>
       <scope>provided</scope>
     </dependency>
