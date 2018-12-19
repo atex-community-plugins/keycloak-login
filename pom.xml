@@ -39,10 +39,10 @@
   </distributionManagement>
 
   <properties>
-    <polopoly.version>10.16.5</polopoly.version>
+    <polopoly.version>10.18.0</polopoly.version>
     <servlet-api.version>3.0.1</servlet-api.version>
     <keycloak.version>3.4.3.Final</keycloak.version>
-    <baseline.version>4.0.7</baseline.version>
+    <baseline.version>4.0.9</baseline.version>
   </properties>
 
   <pluginRepositories>
@@ -93,14 +93,14 @@
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>users</artifactId>
-      <version>2.6</version>
+      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>users</artifactId>
-      <version>2.6</version>
+      <version>${project.version}</version>
       <classifier>contentdata</classifier>
       <scope>provided</scope>
     </dependency>
@@ -108,7 +108,7 @@
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>social-auth-core</artifactId>
-      <version>2.6</version>
+      <version>${project.version}</version>
       <classifier>contentdata</classifier>
       <scope>provided</scope>
     </dependency>
